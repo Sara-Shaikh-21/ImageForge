@@ -21,7 +21,6 @@ const Home = () => {
     const fetchPost = async () => {
       setLoading(true)
       try {
-        console.log(import.meta.env.VITE_REACT_APP_PROXY_URL)
         const response = await fetch(
           `${import.meta.env.VITE_REACT_APP_PROXY_URL}/api/v1/post`,
           {
