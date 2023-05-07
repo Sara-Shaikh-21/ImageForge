@@ -17,17 +17,20 @@ const Home = () => {
   const [searchedResults, setSearchResults] = useState(null)
   const [searchText, setsearchText] = useState('')
   const [searchTimeout, setSearchTimeout] = useState(null)
-
   useEffect(() => {
     const fetchPost = async () => {
       setLoading(true)
+      console.log(process.env.REACT_APP_PROXY_URL)
       try {
-        const response = await fetch('http://localhost:8080/api/v1/post', {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json'
+        const response = await fetch(
+          `${process.env.REACT_APP_PROXY_URL}/api/v1/post`,
+          {
+            method: 'GET',
+            headers: {
+              'Content-Type': 'application/json'
+            }
           }
-        })
+        )
         if (response.ok) {
           const result = await response.json()
           setAllPosts(result.data.reverse())
