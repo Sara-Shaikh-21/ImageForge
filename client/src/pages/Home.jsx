@@ -20,10 +20,10 @@ const Home = () => {
   useEffect(() => {
     const fetchPost = async () => {
       setLoading(true)
-      console.log(process.env.REACT_APP_PROXY_URL)
       try {
+        console.log(import.meta.env.VITE_REACT_APP_PROXY_URL)
         const response = await fetch(
-          `${process.env.REACT_APP_PROXY_URL}/api/v1/post`,
+          `${import.meta.env.VITE_REACT_APP_PROXY_URL}/api/v1/post`,
           {
             method: 'GET',
             headers: {

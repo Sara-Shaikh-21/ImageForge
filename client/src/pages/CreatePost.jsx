@@ -21,7 +21,7 @@ const CreatePost = () => {
       setLoading(true)
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_PROXY_URL}/api/v1/post`,
+          `${import.meta.env.VITE_REACT_APP_PROXY_URL}/api/v1/post`,
           {
             method: 'POST',
             headers: {
@@ -54,7 +54,7 @@ const CreatePost = () => {
       try {
         setGeneratingImg(true)
         const response = await fetch(
-          `${process.env.REACT_APP_PROXY_URL}/api/v1/dalle`,
+          `${import.meta.env.VITE_REACT_APP_PROXY_URL}/api/v1/dalle`,
           {
             method: 'POST',
             headers: {
